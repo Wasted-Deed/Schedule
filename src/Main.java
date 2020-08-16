@@ -45,6 +45,8 @@ public class Main extends BasicGame {
         return new Day(pairs, date);
     }
 
+    private String[] times = {"9:00-10:30", "10:40-12:10", "12:50-14:20", "14:30-16:00"};
+
     private void loadPlan() throws IOException {
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream("res\\plan.txt"), StandardCharsets.UTF_8));
@@ -53,19 +55,35 @@ public class Main extends BasicGame {
         ArrayList<Pair> pairs = new ArrayList<>();
         ArrayList<Day> days = new ArrayList<>();
         int count = 0;
+        int day = 1;
+        int month = 9;
         while (reader.ready()) {
             c = (char) reader.read();
             line.append(c);
             if (c == '}') {
                 String[] l = line.toString().split("'");
-                pairs.add(new Pair(l[3], l[11], l[15], l[7]));
+                pairs.add(new Pair(l[3], l[11], l[15], times[count] + " " + l[7]));
                 line.setLength(0);
+                count++;
             }
-            if (c == ']') {
-                days.add(new Day(pairs, "Дата"));
+            if (count == 4) {
+                String add1 = "";
+                String add2 = "";
+                if (day < 10) {
+                    add1 = "0";
+                }
+                if (month < 10) {
+                    add2 = "0";
+                }
+                days.add(new Day(pairs, "Дата: " + add1 + day + "." + add2 + month + ".20"));
                 pairs = new ArrayList<>();
+                count = 0;
+                day++;
+                if (day == 31) {
+                    day = 1;
+                    month = (month + 1) % 13;
+                }
             }
-            count++;
         }
         ArrayList<Week> weeks = new ArrayList<>();
         weeks.add(new Week(days));
@@ -127,7 +145,7 @@ public class Main extends BasicGame {
         weeks2.add(w2);
         Program pd = new Program(weeks2);
         programs.put("Перевозка опасных грузов воздушным транспортом. 9 категория ИКАО/ИАТА. Базовый курс", pd);
-        font1 = new java.awt.Font("Verdana", java.awt.Font.PLAIN, 25);
+        font1 = new java.awt.Font("Verdana", java.awt.Font.PLAIN, 22);
         font = new TrueTypeFont(font1, false, c);
         dayW = 600;
         try {
