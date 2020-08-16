@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Schedule:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Schedule_jar</output-path>
+    <root id="archive" name="Schedule.jar">
+      <element id="module-output" name="Schedule" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/ibxm.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/jinput.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/jnlp.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/jogg-0.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/jorbis-0.0.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/lwjgl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/lwjgl_util.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/lwjgl_util_applet.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/natives-linux.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/natives-mac.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/natives-windows.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/slick-examples.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/slick.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Slick2D/slick/lib/tinylinepp.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
